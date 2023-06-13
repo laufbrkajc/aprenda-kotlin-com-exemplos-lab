@@ -17,8 +17,15 @@ class Formacao(val nome: String, val conteudos: Set<ConteudoEducacional>) {
         }
     }
 
-
     fun matricular(novosAlunos: Set<Aluno>) {
         alunos.addAll(novosAlunos)
+    }
+
+    fun cancelarMatricula(desistentes: Set<Aluno>) {
+        alunos.removeAll(desistentes)
+    }
+
+    public override fun toString(): String {
+        return "Formacao(${this.nome}, ${this.cargaHoraria}, ${this.nivel}, ${this.hashCode()})"
     }
 }
